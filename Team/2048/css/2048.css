@@ -1,5 +1,5 @@
 @charset "utf-8";
- 
+
 #div2048
 {
     width: 500px;
@@ -8,7 +8,7 @@
     margin: 0 auto;
     position: relative;
 }
-#start
+#startGame
 {
     width: 500px;
     height: 500px;
@@ -19,7 +19,7 @@
     background: #f2b179;
     color: #FFFFFF;
 }
-#div2048 div.tile
+#div2048 div.box
 {
     margin: 20px 0px 0px 20px;
     width: 100px;
@@ -30,40 +30,40 @@
     text-align: center;
     float: left;
 }
-#div2048 div.tile0{
+#div2048 div.box0{
     background: #ccc0b2;
 }
-#div2048 div.tile2
+#div2048 div.box2
 {
     color: #7c736a;
     background: #eee4da;
 }
-#div2048 div.tile4
+#div2048 div.box4
 {
     color: #7c736a;
     background: #ece0c8;
 }
-#div2048 div.tile8
+#div2048 div.box8
 {
     color: #fff7eb;
     background: #f2b179;
 }
-#div2048 div.tile16
+#div2048 div.box16
 {
     color:#fff7eb;
     background:#f59563;
 }
-#div2048 div.tile32
+#div2048 div.box32
 {
     color:#fff7eb;
     background:#f57c5f;
 }
-#div2048 div.tile64
+#div2048 div.box64
 {
     color:#fff7eb;
     background:#f65d3b;
 }
-#div2048 div.tile128
+#div2048 div.box128
 {
     color:#fff7eb;
     background:#edce71;
@@ -73,7 +73,7 @@
     color:#fff7eb;
     background:#edcc61;
 }
-#div2048 div.tile512
+#div2048 div.box512
 {
     color:#fff7eb;
     background:#ecc850;
@@ -83,7 +83,7 @@
     color:#fff7eb;
     background:#edc53f;
 }
-#div2048 div.tile2048
+#div2048 div.box2048
 {
     color:#fff7eb;
     background:#eec22e;

@@ -1,160 +1,170 @@
-function game2048(container)
+function gameFun(container)
 {
     this.container = container;
-    this.tiles = new Array(16);
+    this.boxs = new Array(16);
 }
 
-game2048.prototype = {
-    init: function(){
-        for(var i = 0, len = this.tiles.length; i < len; i++){
-            var tile = this.newTile(0);
-            tile.setAttribute('index', i);
-            this.container.appendChild(tile);
-            this.tiles[i] = tile;
+gameFun.prototype = {
+    initialization: function(){
+        for(var i = 0, len = this.boxs.length; i < len; i++){
+            var box = this.newBox(0);
+            box.setAttribute('index', i);
+            this.container.appendChild(box);
+            this.boxs[i] = box;
         }
-        this.randomTile();
-        this.randomTile();
+        this.randomBox();
+        this.randomBox();
     },
-    newTile: function(val){
-        var tile = document.createElement('div');
-        this.setTileVal(tile, val)
-        return tile;
+    newBox: function(val){
+        var box = document.createElement('div');
+        this.setBoxVal(box, val)
+        return box;
     },
-    setTileVal: function(tile, val){
-        tile.className = 'tile tile' + val;
-        tile.setAttribute('val', val);
-        tile.innerHTML = val > 0 ? val : '';
+    setBoxVal: function(box, val){
+        box.className = 'box box' + val;
+        box.setAttribute('val', val);
+        box.innerHTML = val > 0 ? val : '';
     },
-    randomTile: function(){
-        var zeroTiles = [];
-        for(var i = 0, len = this.tiles.length; i < len; i++){
-            if(this.tiles[i].getAttribute('val') == 0){
-                zeroTiles.push(this.tiles[i]);
+    randomBox: function(){
+        var zeroBoxs = [];
+        for(var i = 0, len = this.boxs.length; i < len; i++){
+            if(this.boxs[i].getAttribute('val') == 0){
+                zeroBoxs.push(this.boxs[i]);
             }
         }
-        var rTile = zeroTiles[Math.floor(Math.random() * zeroTiles.length)];
-        this.setTileVal(rTile, Math.random() < 0.8 ? 2 : 4);
+        var rBox = zeroBoxs[Math.floor(Math.random() * zeroBoxs.length)];
+        this.setBoxVal(rBox, Math.random() < 0.8 ? 2 : 4);
     },
-    move:function(direction){
+    moveBox:function(direction){
         var j;
+        /*left arrow	37
+        up arrow	38
+        right arrow	39
+        down arrow	40
+        */
         switch(direction){
-            case 'W':
-                for(var i = 4, len = this.tiles.length; i < len; i++){
+            case 38:
+                for(var i = 4, len = this.boxs.length; i < len; i++){
                     j = i;
                     while(j >= 4){
-                        this.merge(this.tiles[j - 4], this.tiles[j]);
+                        this.mergeBox(this.boxs[j - 4], this.boxs[j]);
                         j -= 4;
                     }
                 }
                 break;
-            case 'S':
+            case 40:
                 for(var i = 11; i >= 0; i--){
                     j = i;
                     while(j <= 11){
-                        this.merge(this.tiles[j + 4], this.tiles[j]);
+                        this.mergeBox(this.boxs[j + 4], this.boxs[j]);
                         j += 4;
                     }
                 }
                 break;
-            case 'A':
-                for(var i = 1, len = this.tiles.length; i < len; i++){
+            case 37:
+                for(var i = 1, len = this.boxs.length; i < len; i++){
                     j = i;
                     while(j % 4 != 0){
-                        this.merge(this.tiles[j - 1], this.tiles[j]);
+                        this.mergeBox(this.boxs[j - 1], this.boxs[j]);
                         j -= 1;
                     }
                 }
                 break;
-            case 'D':
+            case 39:
                 for(var i = 14; i >= 0; i--){
                     j = i;
                     while(j % 4 != 3){
-                        this.merge(this.tiles[j + 1], this.tiles[j]);
+                        this.mergeBox(this.boxs[j + 1], this.boxs[j]);
                         j += 1;
                     }
                 }
                 break;
         }
-        this.randomTile();
+        this.randomBox();
     },
-    merge: function(prevTile, currTile){
-        var prevVal = prevTile.getAttribute('val');
-        var currVal = currTile.getAttribute('val');
+    mergeBox: function(prevBox, currBox){
+        var prevVal = prevBox.getAttribute('val');
+        var currVal = currBox.getAttribute('val');
         if(currVal != 0){
             if(prevVal == 0){
-                this.setTileVal(prevTile, currVal);
-                this.setTileVal(currTile, 0);
+                this.setBoxVal(prevBox, currVal);
+                this.setBoxVal(currBox, 0);
             }
             else if(prevVal == currVal){
-                this.setTileVal(prevTile, prevVal * 2);
-                this.setTileVal(currTile, 0);
+                this.setBoxVal(prevBox, prevVal * 2);
+                this.setBoxVal(currBox, 0);
             }
         }
     },
-    equal: function(tile1, tile2){
-        return tile1.getAttribute('val') == tile2.getAttribute('val');
+    equalVal: function(box1, box2){
+        return box1.getAttribute('val') == box2.getAttribute('val');
     },
-    max: function(){
-        for(var i = 0, len = this.tiles.length; i < len; i++){
-            if(this.tiles[i].getAttribute('val') == 2048){
+    maxVal: function(){
+        for(var i = 0, len = this.boxs.length; i < len; i++){
+            if(this.boxs[i].getAttribute('val') == 2048){
                 return true;
             }
         }
     },
-    over: function(){
-        for(var i = 0, len = this.tiles.length; i < len; i++){
-            if(this.tiles[i].getAttribute('val') == 0){
+    overNumbers: function(){
+        for(var i = 0, len = this.boxs.length; i < len; i++){
+            if(this.boxs[i].getAttribute('val') == 0){
                 return false;
             }
             if(i % 4 != 3){
-                if(this.equal(this.tiles[i], this.tiles[i + 1])){
+                if(this.equalVal(this.boxs[i], this.boxs[i + 1])){
                     return false;
                 }
             }
             if(i < 12){
-                if(this.equal(this.tiles[i], this.tiles[i + 4])){
+                if(this.equalVal(this.boxs[i], this.boxs[i + 4])){
                     return false;
                 }
             }
         }
         return true;
     },
-    clean: function(){
-        for(var i = 0, len = this.tiles.length; i < len; i++){
-            this.container.removeChild(this.tiles[i]);
+    cleanNumber: function(){
+        for(var i = 0, len = this.boxs.length; i < len; i++){
+            this.container.removeChild(this.boxs[i]);
         }
-        this.tiles = new Array(16);
+        this.boxs = new Array(16);
     }
 }
 
-var game, startBtn;
+var game, startGame;
 
 window.onload = function(){
     var container = document.getElementById('div2048');
-    startBtn = document.getElementById('start');
-    startBtn.onclick = function(){
+    startGame = document.getElementById('startGame');
+    startGame.onclick = function(){
         this.style.display = 'none';
-        game = game || new game2048(container);
-        game.init();
+        game = game || new gameFun(container);
+        game.initialization();
     }
 }
 
 window.onkeydown = function(e){
-    var keynum, keychar;
+    var keynum;
     if(window.event){
         keynum = e.keyCode;
     }
-    else if(e.which){      
+    else if(e.which){
         keynum = e.which;
     }
-    keychar = String.fromCharCode(keynum);
-    if(['W', 'S', 'A', 'D'].indexOf(keychar) > -1){
-        if(game.over()){
-            game.clean();
-            startBtn.style.display = 'block';
-            startBtn.innerHTML = 'game over, replay?';
+
+/*left arrow	37
+up arrow	38
+right arrow	39
+down arrow	40
+*/
+    if([ 37, 38, 39, 40].indexOf(keynum) > -1){
+        if(game.overNumbers()){
+            game.cleanNumber();
+            startGame.style.display = 'block';
+            startGame.innerHTML = 'game over, replay?';
             return;
         }
-        game.move(keychar);
+        game.moveBox(keynum);
     }
 }
