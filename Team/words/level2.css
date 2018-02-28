@@ -1,0 +1,228 @@
+body{
+		margin           : 1% auto;
+		padding          : 1%;
+		background-color : #D1F2FC;
+		font-weight      : bold;
+		position         :relative
+	}
+	.maindiv{
+		margin           : 2% auto;
+		padding          : 2%;
+		height           : 700px;
+		width            : 70%;
+		border           : 0px solid;
+		font-weight      : bold;
+		font-style:		 : Sans Serif;
+		background-color :#D1F2FC;
+		border-radius    :10%;
+	}
+    #container_div{
+		padding-top      : 6%;
+		padding-left     : 2%;
+		height           : 50%;
+		width            : 99%;
+		border           : 0px solid;
+		background-color :#D1F2FC;
+		font-weight      : bold;
+		border-radius    : 70%
+	}
+	button{
+		position         :relative;
+		margin           : 0.1%;
+		margin-left      : 3%;
+		padding          : 1%;
+		height           : 20%;
+		width            : 8%;
+		font-size        : 35px;
+		border           : 0.5px solid;
+		font-weight      : bold;
+		text-align       : center;
+		border-radius    : 30%;
+		transform: rotatex(180deg)
+		
+	}
+	button:hover{
+		-webkit-transform: scale(1.3,1.3);
+		transform: scale(1.3,1.3)
+	}
+	.submit {
+		margin           : 1%;
+		padding          : 2%;
+		height           : 20%;
+		width            : 15%;
+		font-size        : 20px;
+		border-radius    :10%;
+		border           : 1px solid;
+		font-weight      : bold;
+		text-align       : center;
+		position         : relative;
+		float            : left;
+		margin-left      : 32%;
+		background-color : #74E8B9;
+		transform: rotatex(0deg)
+	}
+	.submit:hover{
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1)
+	}
+	.answer{
+		display          : block;
+		width            : 50%;
+		margin-left      : 23%;
+		padding          : 15px;
+		height           : 15%;
+		background-color : white;
+		font-size        : 72px;
+		border           : 1px solid;
+		font-weight      : bold;
+		text-align       : center;
+		border-radius    : 5%;
+	   margin-top        : 2%
+
+		
+	}
+	.start{
+		padding          : 2%;
+		margin           : 8% auto;
+		margin-top       : 20%;
+		font-size        : 30px;
+		text-align       : center;
+		font-weight      : bold;
+		width            : 18%;
+		border-radius:5%;
+		width:300px;
+		height:50px;
+		
+	}
+	.start:hover{
+		-webkit-transform: scale(1.3,1.3);
+		transform: scale(1.3,1.3)
+		
+	}
+	.delete{
+		margin           : 1%;
+		padding          : 2%;
+		margin-left      : 3%; 
+		border           : 1px solid;
+		font-size        : 20px;
+		text-align       : center;
+		font-weight      : bold;
+		width            : 15%;
+		height           : 20%;
+		position         : relative;
+		float            : left;
+		transform: rotatex(0deg)
+		
+	}
+	.delete:hover{
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1)
+	}
+	.score{
+		margin-left      : 12% ;
+		padding          : 2% ;
+		width            : 20%;
+		border           : 1px solid;
+		position         : relative;
+		float            : left;
+		font-size        : 40px;
+		text-align       : center;
+		font-weight      : bold;
+		margin-top       : 1%
+		
+	}
+	.num_words{
+		margin           : 1%;
+		padding          : 2%;
+		width            : 20%;
+		border           : 1px solid;
+		position         : relative;
+		float            : left;
+		font-size        : 40px;
+		text-align       : center;
+		font-weight      : bold;
+		border-radius    : 50%
+	}
+	.conut_down{
+	    margin           : 1%;
+		padding          : 2%;
+		width            : 20%;
+		border           : 1px solid;
+		position         : relative;
+		float            : left;
+		font-size        : 50px;
+		text-align       : center;
+		font-weight      : bold;
+		border-radius    : 10%
+	}
+	.result{
+		width            : 70%;
+		font-weight      : bold;
+		margin-left      : 20%;
+	}
+	.goodresult{
+		background: url(congratulations.gif) no-repeat;
+        margin-left: 20%;
+        height: 268px;
+        width: 48%;
+		margin-top: 14%%;
+	}
+	.badresult{
+		background       : url(game_over.png) no-repeat;
+		margin-left      : 6%;
+		margin-top       : 5%;
+		height           : 549px;
+		width            : 64%;
+		font-weight      : bold;
+	}
+	.level2{
+		padding          : 2%;
+		margin           : -25% auto; 
+		float            : left;
+		text-decoration  : none;
+		margin-left      : 46%;
+		background       : url(level3.png) no-repeat;
+		height: 207px;
+		width: 50%;
+		margin-top: -21%;
+        opacity: 0.5
+		
+	}
+	.playagain{
+		margin           : 1% auto ; 
+		width            : 22%;
+		float            : left;
+		text-decoration  : none;
+		margin-top       : 43%;
+		background       : url(play_again.png) no-repeat;
+		height           : 240px;
+		margin-left      : 18%
+	}
+	#have_char{
+		border-radius    : 50%;
+		margin: 2% auto;
+	}
+	#to_strt
+	{
+		background-color:#74E8B9;
+		border-radius:25%;
+		border-color:#D1F2FC;
+	}
+	#id_delete
+	{
+		border-radius:10%;
+		background-color:#C6331F;
+	}
+	#id_score
+	{
+		border-radius    : 10%;
+		background-color:#32908F;
+	}
+	#number_words
+	{
+		border-radius    : 10%;
+		background-color:#32908F;
+	}
+	#have_char{
+		
+	}

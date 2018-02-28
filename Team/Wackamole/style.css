@@ -1,0 +1,151 @@
+#background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#menu {
+    display: inline-block;
+    float: right;
+}
+
+#score-time {
+    color: white;
+    background-color: #0DB78E;
+    font-family: calibri;
+    font-size: 18px;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 15px;
+    margin-left: 5px;
+    border:2px solid #0B9E7B;
+}
+
+label {
+}
+
+#foreground {
+    z-index: 2;
+    width: 1250px;
+    height: 150px;
+    position: fixed;
+    bottom: 45;
+    left: 75px;
+}
+
+#ball0 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 100px;
+    position: fixed;
+}
+
+#ball1 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 255px;
+    position: fixed;
+}
+
+#ball2 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 420px;
+    position: fixed;
+}
+
+#ball3 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 590px;
+    position: fixed;
+}
+
+#ball4 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 755px;
+    position: fixed;
+}
+
+#ball5 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 915px;
+    position: fixed;
+}
+
+#ball6 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 1065px;
+    position: fixed;
+}
+
+#ball7 {
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 1210px;
+    position: fixed;
+}
+
+#ball8 {
+    width: 50px;
+    height: 50px;
+    top: 600px;
+    left: 250px;
+    position: relative;
+}
+
+#ball9 {
+    width: 50px;
+    height: 50px;
+    top: 600px;
+    left: 300px;
+    position: relative;
+}
+
+body {
+    color: #DAD6D6;
+    background: #171A21;
+    text-align: center;
+}
+
+#start {
+    margin: 40px auto;
+    text-align: center;
+    color: #DAD6D6;
+    background: #48633B;
+    border: solid 2px #35492C;
+    border-radius: 5px;
+    padding: 16px 40px 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#reset {
+    margin: 40px 5px auto;
+    text-align: center;
+    color: #DAD6D6;
+    background: #721329;
+    border: solid 2px #590F20;
+    border-radius: 5px;
+    padding: 16px 40px 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#controls {
+    position: fixed;
+    top: 200px;
+    left: 1200px;
+}
