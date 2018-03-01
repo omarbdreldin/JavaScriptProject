@@ -68,7 +68,7 @@
     color:#fff7eb;
     background:#edce71;
 }
-#div2048 div.tile256
+#div2048 div.box256
 {
     color:#fff7eb;
     background:#edcc61;
@@ -78,7 +78,7 @@
     color:#fff7eb;
     background:#ecc850;
 }
-#div2048 div.tile1024
+#div2048 div.box1024
 {
     color:#fff7eb;
     background:#edc53f;
