@@ -24,10 +24,12 @@ var score = 0;
 var scoreLabel = document.getElementById("score");
 
 function initiateGame() {
-    abrubtStopFlag = false;
-    startTimer(60, document.getElementById("time"));
-    startFlag = setInterval(startGame, 200);
-    console.log(startFlag);
+    if (!moveFlag) {
+        abrubtStopFlag = false;
+        startTimer(60, document.getElementById("time"));
+        startFlag = setInterval(startGame, 200);
+        console.log(startFlag);
+    }
 }
 
 function startGame() {
